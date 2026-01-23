@@ -57,47 +57,17 @@ export const About = () => {
 
           {/* Right column - Visual element */}
           <div className="relative">
-            <div className="aspect-square rounded-3xl bg-gradient-to-br from-navy-800 to-navy-900 border border-border/30 p-8 relative overflow-hidden">
-              {/* Abstract visual - connected systems */}
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
-                <defs>
-                  <linearGradient id="aboutGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="hsl(199, 89%, 48%)" stopOpacity="0.6" />
-                    <stop offset="100%" stopColor="hsl(187, 85%, 53%)" stopOpacity="0.3" />
-                  </linearGradient>
-                </defs>
-                
-                {/* Central node */}
-                <circle cx="200" cy="200" r="40" fill="url(#aboutGradient)" className="animate-pulse-slow" />
-                <circle cx="200" cy="200" r="60" stroke="url(#aboutGradient)" strokeWidth="1" fill="none" opacity="0.5" />
-                <circle cx="200" cy="200" r="90" stroke="url(#aboutGradient)" strokeWidth="0.5" fill="none" opacity="0.3" />
-                
-                {/* Orbiting nodes */}
-                <g className="animate-float">
-                  <circle cx="120" cy="100" r="15" fill="hsl(199, 89%, 48%)" opacity="0.8" />
-                  <line x1="135" y1="115" x2="180" y2="170" stroke="url(#aboutGradient)" strokeWidth="1" />
-                </g>
-                <g className="animate-float animation-delay-200">
-                  <circle cx="300" cy="120" r="12" fill="hsl(187, 85%, 53%)" opacity="0.7" />
-                  <line x1="288" y1="132" x2="225" y2="175" stroke="url(#aboutGradient)" strokeWidth="1" />
-                </g>
-                <g className="animate-float animation-delay-400">
-                  <circle cx="320" cy="280" r="18" fill="hsl(199, 89%, 48%)" opacity="0.6" />
-                  <line x1="302" y1="270" x2="235" y2="220" stroke="url(#aboutGradient)" strokeWidth="1" />
-                </g>
-                <g className="animate-float animation-delay-300">
-                  <circle cx="100" cy="300" r="14" fill="hsl(187, 85%, 53%)" opacity="0.8" />
-                  <line x1="114" y1="286" x2="170" y2="225" stroke="url(#aboutGradient)" strokeWidth="1" />
-                </g>
-
-                {/* Additional connecting lines */}
-                <path d="M120 100 Q200 50 300 120" stroke="url(#aboutGradient)" strokeWidth="0.5" fill="none" opacity="0.4" />
-                <path d="M100 300 Q50 200 120 100" stroke="url(#aboutGradient)" strokeWidth="0.5" fill="none" opacity="0.4" />
-              </svg>
+            <div className="aspect-square rounded-3xl border border-border/30 relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=800&fit=crop"
+                alt="Team collaboration"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-900/90 via-navy-900/40 to-transparent" />
 
               {/* Overlay text */}
               <div className="absolute bottom-8 left-8 right-8">
-                <p className="font-display text-lg font-medium text-foreground/80">
+                <p className="font-display text-lg font-medium text-foreground">
                   Building connected systems that grow with you
                 </p>
               </div>

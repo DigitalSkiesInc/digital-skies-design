@@ -11,12 +11,12 @@
 
 @layer base {
   :root {
-    /* Core blues - deep to light */
-    --navy-950: 222 47% 5%;
-    --navy-900: 222 47% 8%;
-    --navy-800: 222 44% 12%;
-    --navy-700: 222 40% 18%;
-    --navy-600: 222 35% 25%;
+    /* Core blues - deep to light (lightened) */
+    --navy-950: 222 47% 11%;
+    --navy-900: 222 47% 14%;
+    --navy-800: 222 44% 18%;
+    --navy-700: 222 40% 24%;
+    --navy-600: 222 35% 32%;
     
     /* Sky blues */
     --sky-500: 199 89% 48%;

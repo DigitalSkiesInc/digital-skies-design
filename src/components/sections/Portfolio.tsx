@@ -6,18 +6,21 @@ const projects = [
     category: 'Web Application',
     description: 'Scalable online store handling 10,000+ daily transactions with real-time inventory management.',
     metrics: '300% increase in conversion rate',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop',
   },
   {
     title: 'Healthcare Scheduling',
     category: 'Mobile Application',
     description: 'Patient booking app reducing no-shows by 60% through smart reminders and easy rescheduling.',
     metrics: '50,000+ appointments booked',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=450&fit=crop',
   },
   {
     title: 'Logistics Dashboard',
     category: 'Backend & Automation',
     description: 'Real-time fleet tracking and route optimization saving 20+ hours per week in manual work.',
     metrics: '40% reduction in delivery times',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop',
   },
 ];
 
@@ -47,25 +50,17 @@ export const Portfolio = () => {
               key={project.title}
               className="group relative overflow-hidden rounded-2xl bg-navy-800/50 border border-border/30 hover:border-sky-500/40 transition-all duration-300"
             >
-              {/* Placeholder image area */}
-              <div className="aspect-video bg-gradient-to-br from-navy-700 to-navy-800 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-cyan-500/10 group-hover:from-sky-500/20 group-hover:to-cyan-500/20 transition-colors" />
-                
-                {/* Abstract pattern */}
-                <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 400 225">
-                  <defs>
-                    <linearGradient id={`projectGradient${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="hsl(199, 89%, 48%)" stopOpacity="0.5" />
-                      <stop offset="100%" stopColor="hsl(187, 85%, 53%)" stopOpacity="0.2" />
-                    </linearGradient>
-                  </defs>
-                  <rect x="50" y="40" width="60" height="60" rx="8" stroke={`url(#projectGradient${index})`} strokeWidth="1" fill="none" transform={`rotate(${index * 15}, 80, 70)`} />
-                  <circle cx="300" cy="150" r="40" stroke={`url(#projectGradient${index})`} strokeWidth="1" fill="none" />
-                  <path d="M150 180 Q250 100 350 160" stroke={`url(#projectGradient${index})`} strokeWidth="1" fill="none" />
-                </svg>
+              {/* Project image */}
+              <div className="aspect-video relative overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-navy-900/20 to-transparent" />
 
                 {/* Arrow indicator */}
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-navy-900/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-navy-900/70 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <ArrowUpRight className="w-5 h-5 text-sky-400" />
                 </div>
               </div>

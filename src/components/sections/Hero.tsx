@@ -128,7 +128,7 @@ export const Hero = () => {
           </div>
 
           {/* Trust indicators */}
-          <div className="mt-16 pt-8 border-t border-border/30 animate-fade-up opacity-0 animation-delay-400">
+          {/* <div className="mt-16 pt-8 border-t border-border/30 animate-fade-up opacity-0 animation-delay-400">
             <p className="text-sm text-muted-foreground mb-4">Trusted by teams who value quality</p>
             <div className="flex flex-wrap gap-8 items-center">
               <div className="flex items-center gap-2">
@@ -144,7 +144,7 @@ export const Hero = () => {
                 <span className="text-slate-400 text-sm font-medium">Partner</span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

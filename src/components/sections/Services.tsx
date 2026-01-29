@@ -33,9 +33,10 @@ const services = [
   },
 ];
 
+
 export const Services = () => {
   return (
-    <section id="services" className="section-padding relative">
+    <section id="services" className="py-12 md:py-16 lg:py-20 relative">
       <div className="absolute inset-0 bg-radial-glow opacity-50" />
       
       <div className="container-wide relative z-10">
@@ -68,11 +69,11 @@ export const Services = () => {
 
               {/* Outcome (headline) */}
               <h3 className="font-display text-xl font-semibold mb-2 group-hover:text-sky-400 transition-colors">
-                {service.outcome}
+                {service.service}
               </h3>
 
               {/* Service name (smaller) */}
-              <p className="text-sm text-sky-400/70 mb-4">{service.service}</p>
+              {/* <p className="text-sm text-sky-400/70 mb-4">{service.service}</p> */}
 
               {/* Description */}
               <p className="text-muted-foreground leading-relaxed">

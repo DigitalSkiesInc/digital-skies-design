@@ -19,7 +19,7 @@ const principles = [
 
 export const Principles = () => {
   return (
-    <section id="principles" className="section-padding relative">
+    <section id="principles" className="py-8 md:py-12 lg:py-16 relative">
       <div className="absolute inset-0 bg-radial-glow opacity-30" />
       
       <div className="container-wide relative z-10">

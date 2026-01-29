@@ -1,32 +1,37 @@
 import { ArrowUpRight } from 'lucide-react';
+import ProjectCard from '../ui/project-card'; 
+
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    category: 'Web Application',
-    description: 'Scalable online store handling 10,000+ daily transactions with real-time inventory management.',
-    metrics: '300% increase in conversion rate',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop',
-  },
-  {
-    title: 'Healthcare Scheduling',
+    title: 'PO Signal Trader',
     category: 'Mobile Application',
-    description: 'Patient booking app reducing no-shows by 60% through smart reminders and easy rescheduling.',
-    metrics: '50,000+ appointments booked',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=450&fit=crop',
+    description: 'An application that helps beginner traders kickstart their trading journey. The app automatically copies trading orders placed by select professional traders. Users are also able to set trading configurations to manage risk and can view their trading statistics to inform on their trading settings.Features an easy to use UI and a smooth user experience.',
+    metrics: '300% increase in conversion rate',
+    link:"https://play.google.com/store/apps/details?id=com.digitalskies.testapp",
+    image: 'assets/trading-app.png',
   },
   {
-    title: 'Logistics Dashboard',
-    category: 'Backend & Automation',
-    description: 'Real-time fleet tracking and route optimization saving 20+ hours per week in manual work.',
+    title: 'Drupp Ride-Hailing App',
+    category: 'Mobile Application',
+    description: 'A ride-hailing app developed for Drupp Ltd Nigeria. Features ability to see nearby drivers, one-on-one communication between drivers and riders, ride  live-tracking, payment system among other features of ride-hailing apps. Easy to use and a visually appealing UI.The app  uses android and third-party APIs to be able to support these capabilities.',
+    metrics: '50,000+ appointments booked',
+    link:"https://www.mydrupp.com/",
+    image: 'assets/ride-hailing.png',
+  },
+  {
+    title: 'Plada Inventory Management App',
+    category: 'Mobile Application',
+    description: 'An Inventory management app made for SDV ,Portugal. It features inter-shop inventory transfers, sales recording, Sample registration and periodic inventory events. The app is data heavy and called for rigorous testing to ensure accuracy.',
     metrics: '40% reduction in delivery times',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop',
+    link:"#",
+    image: 'assets/inventory-app.png',
   },
 ];
 
 export const Portfolio = () => {
   return (
-    <section id="work" className="section-padding relative bg-navy-900/30">
+    <section id="work" className="py-12 md:py-16 lg:py-20 relative bg-navy-900/30">
       <div className="container-wide">
         {/* Section header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
@@ -44,45 +49,9 @@ export const Portfolio = () => {
         </div>
 
         {/* Projects grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <article
-              key={project.title}
-              className="group relative overflow-hidden rounded-2xl bg-navy-800/50 border border-border/30 hover:border-sky-500/40 transition-all duration-300"
-            >
-              {/* Project image */}
-              <div className="aspect-video relative overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-navy-900/20 to-transparent" />
-
-                {/* Arrow indicator */}
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-navy-900/70 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ArrowUpRight className="w-5 h-5 text-sky-400" />
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <span className="text-xs text-sky-400 font-medium tracking-wide uppercase">
-                  {project.category}
-                </span>
-                <h3 className="font-display text-xl font-semibold mt-2 mb-3 group-hover:text-sky-400 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="pt-4 border-t border-border/30">
-                  <p className="text-sm font-medium text-cyan-400">
-                    {project.metrics}
-                  </p>
-                </div>
-              </div>
-            </article>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-start">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
 

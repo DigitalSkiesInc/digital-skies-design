@@ -47,6 +47,7 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        brand_blue: "#4747f9",
         navy: {
           950: "hsl(var(--navy-950))",
           900: "hsl(var(--navy-900))",
@@ -69,6 +70,10 @@ export default {
           300: "hsl(var(--slate-300))",
           400: "hsl(var(--slate-400))",
           500: "hsl(var(--slate-500))",
+        },
+        blue:{
+          500: "hsl(var(--blue-500))",
+          400: "hsl(var(--blue-400))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

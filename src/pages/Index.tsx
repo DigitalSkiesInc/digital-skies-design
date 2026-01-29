@@ -2,7 +2,9 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/sections/Hero';
 import { Services } from '@/components/sections/Services';
+import { Services2 } from '@/components/sections/Services2';
 import { Process } from '@/components/sections/Process';
+import { Approach } from '@/components/sections/Approach';
 import { Principles } from '@/components/sections/Principles';
 import { Portfolio } from '@/components/sections/Portfolio';
 import { About } from '@/components/sections/About';
@@ -14,9 +16,9 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <Services />
-        <Process />
-        <Principles />
+        <Services2 />
+        <Approach />
+        {/* <Principles /> */}
         <Portfolio />
         <About />
         <Contact />

@@ -1,6 +1,6 @@
 export const About = () => {
   return (
-    <section id="about" className="py-12 md:py-16 lg:py-20 relative">
+    <section id="about" className="section-padding relative">
       <div className="absolute inset-0 bg-radial-glow opacity-30" />
       
       <div className="container-wide relative z-10">
@@ -35,7 +35,7 @@ export const About = () => {
             </div>
 
             {/* Values */}
-            {/* <div className="mt-12 grid grid-cols-2 gap-6">
+            <div className="mt-12 grid grid-cols-2 gap-6">
               <div className="space-y-2">
                 <div className="text-3xl font-display font-bold text-sky-400">10+</div>
                 <div className="text-sm text-muted-foreground">Years of combined experience</div>
@@ -52,7 +52,7 @@ export const About = () => {
                 <div className="text-3xl font-display font-bold text-cyan-400">24/7</div>
                 <div className="text-sm text-muted-foreground">Support availability</div>
               </div>
-            </div> */}
+            </div>
           </div>
 
           {/* Right column - Visual element */}

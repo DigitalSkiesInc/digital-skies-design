@@ -4,20 +4,69 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Send, Mail, ArrowRight } from 'lucide-react';
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 export const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Placeholder for form submission
-    setIsSubmitted(true);
+
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+
+    const form = e.target;
+
+    if (form.website.value) return;
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const company = form.company.value.trim();
+    const message = form.project.value.trim();
+
+    // --- Basic validation ---
+    if (!name || !email || !message) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    if (message.length < 10) {
+      alert("Please provide more details about your project.");
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "contacts"), {
+        name,
+        email,
+        company: company || "",
+        message,
+        createdAt: serverTimestamp(),
+      });
+
+      // Clear form after successful submission
+      form.reset();
+
+      setIsSubmitted(true);
+      setIsSubmitting(false);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
     <section id="contact" className="section-padding relative bg-navy-900/50">
       <div className="absolute inset-0 bg-radial-glow opacity-40" />
-      
+
       <div className="container-wide relative z-10">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left column - CTA content */}
@@ -30,7 +79,7 @@ export const Contact = () => {
               <span className="text-gradient"> great together</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Book a free consultation to discuss your project. 
+              Book a free consultation to discuss your project.
               No pressure, just a conversation about what you're building.
             </p>
 
@@ -65,8 +114,8 @@ export const Contact = () => {
             <div className="flex items-center gap-3 text-muted-foreground">
               <Mail className="w-5 h-5 text-sky-400" />
               <span>Prefer email? Reach us at </span>
-              <a href="mailto:hello@digitalskies.dev" className="text-sky-400 hover:text-sky-300 link-underline">
-                hello@digitalskies.dev
+              <a href="mailto:digitalskies1@gmail.com" className="text-sky-400 hover:text-sky-300 link-underline">
+                digitalskies1@gmail.com
               </a>
             </div>
           </div>
@@ -86,6 +135,12 @@ export const Contact = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
+                  <Input
+                      type="text"
+                      name="website"
+                      autoComplete="off"
+                      className="hidden"
+                    />
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
                     <Input
@@ -127,8 +182,8 @@ export const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" variant="hero" size="lg" className="w-full">
-                  Send Message
+                <Button type="submit" variant="hero" size="lg" className="w-full" disabled={isSubmitting}>
+                   {isSubmitting ? "Sending..." : "Send Message"}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
 

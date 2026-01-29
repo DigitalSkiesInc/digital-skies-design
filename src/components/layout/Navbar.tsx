@@ -4,8 +4,7 @@ import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'Services', href: '#services' },
-  { label: 'Process', href: '#process' },
-  { label: 'Principles', href: '#principles' },
+  { label: 'Process', href: '#approach' },
   { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
 ];
@@ -34,15 +33,24 @@ export const Navbar = () => {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-500 to-cyan-500 flex items-center justify-center">
-            <span className="font-display font-bold text-navy-950">D</span>
+            {/* <span className="font-display font-bold text-navy-950">D</span> */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="#0f1729"
+              className="w-5 h-5"
+            >
+              <path d="M4 5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 12.172 3H11.83a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 8.172 5H4zM12 8a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
+            </svg>
+            
           </div>
-          <span className="font-display font-semibold text-lg text-foreground group-hover:text-sky-400 transition-colors">
+          <span className="font-display font-semibold text-xl text-foreground group-hover:text-sky-400 transition-colors">
             DigitalSkies
           </span>
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
               key={link.href}

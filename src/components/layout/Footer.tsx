@@ -8,9 +8,8 @@ const footerLinks = {
   ],
   company: [
     { label: 'About', href: '#about' },
-    { label: 'Process', href: '#process' },
+    { label: 'Process', href: '#approach' },
     { label: 'Work', href: '#work' },
-    { label: 'Principles', href: '#principles' },
   ],
 };
 
@@ -34,10 +33,10 @@ export const Footer = () => {
               reliability, and clear communication.
             </p>
             <a
-              href="mailto:hello@digitalskies.dev"
+              href="mailto:digitalskies1@gmail.com"
               className="text-sky-400 hover:text-sky-300 link-underline"
             >
-              hello@digitalskies.dev
+              digitalskies1@gmail.com
             </a>
           </div>
 

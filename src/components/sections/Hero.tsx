@@ -93,7 +93,7 @@ export const Hero = () => {
       />
 
       {/* Content */}
-      <div className="relative z-10 container-wide pt-20">
+      <div className="relative z-10 container-wide">
         <div className="max-w-4xl">
           {/* Tagline */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-500/30 bg-sky-500/5 mb-8 animate-fade-up opacity-0">
@@ -126,25 +126,7 @@ export const Hero = () => {
               <a href="#services">See Our Services</a>
             </Button>
           </div>
-
-          {/* Trust indicators */}
-          {/* <div className="mt-16 pt-8 border-t border-border/30 animate-fade-up opacity-0 animation-delay-400">
-            <p className="text-sm text-muted-foreground mb-4">Trusted by teams who value quality</p>
-            <div className="flex flex-wrap gap-8 items-center">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded bg-navy-700" />
-                <span className="text-slate-400 text-sm font-medium">Partner</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded bg-navy-700" />
-                <span className="text-slate-400 text-sm font-medium">Partner</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded bg-navy-700" />
-                <span className="text-slate-400 text-sm font-medium">Partner</span>
-              </div>
-            </div>
-          </div> */}
+          
         </div>
       </div>
 

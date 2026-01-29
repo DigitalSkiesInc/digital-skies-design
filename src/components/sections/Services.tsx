@@ -1,46 +1,58 @@
-import { Globe, Smartphone, Server, Zap, Compass } from 'lucide-react';
-
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Container } from '@/components/layout/Container';
+import {
+  Code2,
+  Database,
+  Globe,
+  Smartphone,
+  Workflow,
+  ShieldCheck } from
+'lucide-react';
 const services = [
-  {
-    icon: Globe,
-    outcome: 'Websites that convert and scale',
-    service: 'Web Development',
-    description: 'Fast, accessible, and built to grow with your business. From marketing sites to complex web applications.',
-  },
-  {
-    icon: Smartphone,
-    outcome: 'Mobile apps people actually use',
-    service: 'Mobile Applications',
-    description: 'Native and cross-platform apps designed for engagement. Intuitive interfaces that users love.',
-  },
-  {
-    icon: Server,
-    outcome: 'Backend systems built for growth',
-    service: 'Backend Development',
-    description: 'APIs, databases, and infrastructure that handle scale. Reliable systems that power your operations.',
-  },
-  {
-    icon: Zap,
-    outcome: 'Automation that removes manual work',
-    service: 'Automation & Integrations',
-    description: 'Connect your tools and eliminate repetitive tasks. Free your team to focus on what matters.',
-  },
-  {
-    icon: Compass,
-    outcome: 'Technical guidance for better decisions',
-    service: 'Technical Consulting',
-    description: 'Strategic advice on architecture, technology choices, and team processes. Clarity when you need it.',
-  },
-];
+{
+  icon: Globe,
+  title: 'Web Development',
+  description:
+  'Performant, accessible, and beautiful web applications built with modern frameworks.'
+},
+{
+  icon: Smartphone,
+  title: 'Mobile Applications',
+  description:
+  'Native and cross-platform mobile experiences that feel fluid and responsive.'
+},
+{
+  icon: Database,
+  title: 'Backend Systems',
+  description:
+  'Scalable architecture, API design, and database optimization for growing data needs.'
+},
+{
+  icon: Workflow,
+  title: 'Automation',
+  description:
+  'Streamlining business processes through intelligent integration and automated workflows.'
+},
+{
+  icon: ShieldCheck,
+  title: 'Technical Consulting',
+  description:
+  'Strategic guidance on technology choices, security, and infrastructure planning.'
+},
+{
+  icon: Code2,
+  title: 'Custom Integrations',
+  description:
+  'Connecting disparate systems to create a unified, efficient technology ecosystem.'
+}];
 
-
-export const Services = () => {
+export function Services() {
   return (
-    <section id="services" className="py-12 md:py-16 lg:py-20 relative">
-      <div className="absolute inset-0 bg-radial-glow opacity-50" />
-      
-      <div className="container-wide relative z-10">
-        {/* Section header */}
+    <section id="services" className="py-12 bg-[#0A1628] relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628] to-[#0F2035]" />
+
+      <Container className="relative z-10">
         <div className="max-w-2xl mb-16">
           <span className="text-sm text-sky-400 font-medium tracking-wide uppercase mb-4 block">
             What We Build
@@ -54,35 +66,39 @@ export const Services = () => {
           </p>
         </div>
 
-        {/* Services grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <div
-              key={service.outcome}
-              className="group card-elevated rounded-2xl p-8 hover:border-sky-500/30 transition-all duration-300"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500/20 to-cyan-500/20 flex items-center justify-center mb-6 group-hover:from-sky-500/30 group-hover:to-cyan-500/30 transition-colors">
-                <service.icon className="w-6 h-6 text-sky-400" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) =>
+          <motion.div
+            key={service.title}
+            initial={{
+              opacity: 0,
+              y: 20
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0
+            }}
+            viewport={{
+              once: true
+            }}
+            transition={{
+              delay: index * 0.1
+            }}
+            className="group p-8 rounded-2xl bg-[#1E3A5F]/30 border border-blue-900/30 hover:border-blue-500/50 hover:bg-[#1E3A5F]/50 transition-all duration-300">
+
+              <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                <service.icon className="w-6 h-6 text-blue-400 group-hover:text-blue-300" />
               </div>
-
-              {/* Outcome (headline) */}
-              <h3 className="font-display text-xl font-semibold mb-2 group-hover:text-sky-400 transition-colors">
-                {service.service}
+              <h3 className="text-xl font-semibold text-white mb-3">
+                {service.title}
               </h3>
-
-              {/* Service name (smaller) */}
-              {/* <p className="text-sm text-sky-400/70 mb-4">{service.service}</p> */}
-
-              {/* Description */}
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-slate-400 leading-relaxed text-sm">
                 {service.description}
               </p>
-            </div>
-          ))}
+            </motion.div>
+          )}
         </div>
-      </div>
-    </section>
-  );
-};
+      </Container>
+    </section>);
+
+}

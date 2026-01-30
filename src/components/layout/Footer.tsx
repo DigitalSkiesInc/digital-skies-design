@@ -1,3 +1,5 @@
+import { Phone } from "lucide-react";
+
 const footerLinks = {
   services: [
     { label: 'Web Development', href: '#services' },
@@ -38,6 +40,9 @@ export const Footer = () => {
             >
               digitalskies1@gmail.com
             </a>
+            <div >
+              <span className="text-sky-400 hover:text-sky-300 mt-2 link-underline">+254 (729) 993774</span>
+            </div>
           </div>
 
           {/* Services links */}

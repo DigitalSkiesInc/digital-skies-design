@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Send, Mail, ArrowRight } from 'lucide-react';
+import { Send, Mail, Phone,ArrowRight } from 'lucide-react';
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
@@ -116,6 +116,13 @@ export const Contact = () => {
               <span>Prefer email? Reach us at </span>
               <a href="mailto:digitalskies1@gmail.com" className="text-sky-400 hover:text-sky-300 link-underline">
                 digitalskies1@gmail.com
+              </a>
+            </div>
+            <div className="flex items-center gap-3 text-muted-foreground">
+              <Phone className="w-5 h-5 text-sky-400" />
+              <span>Or call us at </span>
+              <a href="tel:+254729993774" className="text-sky-400 hover:text-sky-300 link-underline">
+                +254 (729) 993774
               </a>
             </div>
           </div>

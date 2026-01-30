@@ -27,6 +27,14 @@ const projects = [
     link:"#",
     image: 'assets/inventory-app.png',
   },
+  // {
+  //   title: 'Shophub Marketplace',
+  //   category: 'Website',
+  //   description: 'A peer to peer platform that connects buyers and sellers and hosted on WorldApp. Users are able to browse a wide range of products with the option to pay in WorldCoin (CryptoCurrency). Built with scalability in mind to handle a growing number of users and transactions while maintaining optimal performance.',
+  //   metrics: '40% reduction in delivery times',
+  //   link:"#work",
+  //   image: 'assets/shophub_marketplace.png',
+  // },
 ];
 
 export const Portfolio = () => {

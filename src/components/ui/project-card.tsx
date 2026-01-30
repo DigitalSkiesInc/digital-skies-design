@@ -7,8 +7,8 @@ const ProjectCard = ({ project }) => {
     return (
         <article className="group relative overflow-hidden rounded-2xl bg-navy-800/50 border border-border/30 hover:border-sky-500/40 transition-all duration-300 flex flex-col">
             {/* Project image - Height remains consistent */}
-            <a href={project.link}>
-                <div className="aspect-video relative overflow-hidden bg-navy-900/50 flex justify-center pt-6">
+            <a href={project.link} target="" rel="noopener noreferrer">
+                {project.category==='Mobile Application'?<div className="aspect-video relative overflow-hidden bg-navy-900/50 flex justify-center pt-6">
                     <img
                         src={project.image}
                         alt={project.title}
@@ -18,7 +18,17 @@ const ProjectCard = ({ project }) => {
                     <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-navy-900/70 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                         <ArrowUpRight className="w-5 h-5 text-sky-400" />
                     </div>
-                </div>
+                </div>:<div className="aspect-video relative overflow-hidden">
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-navy-900/20 to-transparent" />
+                    <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-navy-900/70 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <ArrowUpRight className="w-5 h-5 text-sky-400" />
+                    </div>
+                </div>}
             </a>
 
             {/* Content */}
